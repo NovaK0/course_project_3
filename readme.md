@@ -49,4 +49,4 @@ the model predicted is India as winner and after adding it the model is predicti
 ## Distribution of work:
 Task 1 is divided into two parts, predicting highest wicket taker and highest run scorer and everything regarding it datascrapping and collection. This task is carried out by 3 persons. Task 2,3 and API generation is carried out by other 2 members.
 Task 2 and 3 is available in the main file.
-Task 1 (Highest run scorer) is available in branch "harsh-raval" and task 3 is available in branch "shubham" and "dhvaghera".
+Task 1 (Highest run scorer) is available in branch "harsh-raval" and task 1 (Highest wicket taker) is available in branch "shubham" and "dhvaghera".
