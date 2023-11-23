@@ -1,6 +1,27 @@
 ## DATASET
 The dataset for this project is scrapped from ESPNcricinfo and some data is taken from Cricsheet and Cricmetric. The data is publically available. 
 ## APPROACH
+## Predicting highest wicket taker and run scorer of the tournament (Task 1):
+
+### Highest wicket taker:
+We began with a cricket player dataset from ESPN Cricinfo that included match information for the player with the most wickets taken in the ICC Men's World Cup 2023.
+Source: https://www.espncricinfo.com/records/tournament/bowling-most-wickets-career/icc-cricket-world-cup-2023-24-15338
+Initially, we downloaded the data in columns like Player, Span, Mat, Inns, Balls, Overs, Mdns, Runs, Wkts, etc. from espncricinfo.com.
+Following that, we preprocessed the data by handling categorical variables and choosing pertinent columns. Next, using past performance, we have predicted player wickets using the Random Forest Regressor. and used TensorFlow and Keras to create an Artificial Neural Network (ANN) for comparison. 
+The Mean Squared Error has been our performance metric of choice for training and evaluating models, then generated predictions for the complete dataset after examining the model's performance on the test set. Then, by increasing the 'Wickets' column for each player, I estimated the wicket totals for the next two matches (the semi-final matches) and determined which player on each team was playing at their best.
+After that, we have divided the number of actual wickets by the number of expected wickets to get a performance score for each player. After two matches, we have estimated each team's total wicket based on the performance score of their best player.
+Finally, we made a comparison between the top player from each of the four semi-final teams and the top player from the entire dataset. And we finally got Mohammed Shami as the most wickets taking player in this World Cup.
+
+### Highest run scorer:
+We utilized data from ESPN Cricinfo and Cricmetric to predict the batsman likely to score the most runs in the ICC World Cup 2023.
+Source ESPN - https://www.espncricinfo.com/records/tournament/batting-most-runs-career/icc-cricket-world-cup-2023-24-15338
+Source Cricmetric - http://www.cricmetric.com/, http://www.cricmetric.com/playerstats.py?player=V+Kohli&role=batsman&format=ODI&groupby=venue&playerStatsFilters=on&start_date=2002-01-01&end_date=2023-11-13&venue=Wankhede&venue=Kolkata&venue=Ahmedabad&venue=Motera&start_over=0&end_over=9999,
+Initially, we scraped information from espncricinfo.com, compiling a dataset with columns such as Player, Span, Mat, Inns, NO, Runs, HS, Ave, BF, SR, 100s, 50s, 0s, 4s, 6s, and Team for the top 145 batsmen in the tournament.
+Additionally, wee gathered venue-specific performance data from Cricmetric, focusing on players' averages in ODI format at venues like Ahmedabad, Mumbai, and Kolkata. I merged these two datasets and selected the top ten players from the semifinalist teams: India, Australia, New Zealand, and South Africa.
+Using a CNN model, we made predictions, with the initial result indicating that R Ravindra would score the most runs.
+Subsequently, in another attempt, we excluded venue-related columns, leading the model to predict that Q de Kock would be the leading run-scorer.
+
+
 ## Predicting the finalist teams and players (Task 2):
 
 ### For teams
